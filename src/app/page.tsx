@@ -8,6 +8,19 @@ import {
   FiLinkedin,
   FiPhone,
   FiMapPin,
+  FiCloud,
+  FiCpu,
+  FiServer,
+  FiRefreshCw,
+  FiAward,
+  FiCode,
+  FiTerminal,
+  FiDatabase,
+  FiSmartphone,
+  FiSun,
+  FiActivity,
+  FiLayers,
+  FiTrendingUp,
 } from "react-icons/fi";
 import {
   SiAmazonwebservices,
@@ -86,7 +99,8 @@ const experiences = [
 const skillCategories = [
   {
     title: "Programming Languages",
-    icon: "purple",
+    icon: <FiCode />,
+    color: "purple",
     skills: [
       "C/C++",
       "Python",
@@ -99,7 +113,8 @@ const skillCategories = [
   },
   {
     title: "Tools & Frameworks",
-    icon: "teal",
+    icon: <FiTerminal />,
+    color: "teal",
     skills: [
       "Spring Boot",
       "Spring MVC",
@@ -115,7 +130,8 @@ const skillCategories = [
   },
   {
     title: "Cloud & DevOps",
-    icon: "purple",
+    icon: <FiCloud />,
+    color: "purple",
     skills: [
       "AWS",
       "GCP",
@@ -129,7 +145,8 @@ const skillCategories = [
   },
   {
     title: "ML & Analytics",
-    icon: "amber",
+    icon: <FiTrendingUp />,
+    color: "amber",
     skills: [
       "TensorFlow",
       "Pandas",
@@ -140,7 +157,8 @@ const skillCategories = [
   },
   {
     title: "Databases & Messaging",
-    icon: "teal",
+    icon: <FiDatabase />,
+    color: "teal",
     skills: [
       "MySQL",
       "PostgreSQL",
@@ -153,7 +171,8 @@ const skillCategories = [
   },
   {
     title: "AI Tools & Editors",
-    icon: "amber",
+    icon: <FiCpu />,
+    color: "amber",
     skills: ["Cursor", "Windsurf", "Claude", "Copilot"],
   },
 ];
@@ -171,14 +190,14 @@ const projects = [
     ],
     description:
       "AI-powered mobile app with a serverless AWS backend (Lambda, API Gateway, S3, DynamoDB). Integrated ML and LLM pipelines (GPT-4o, Claude 3.5, RAG with Pinecone + Titan embeddings) with secure JWT-auth APIs, privacy-first data handling, and CloudWatch observability.",
-    icon: "🧴",
+    icon: <FiSmartphone />,
   },
   {
     title: "Solar Energy Estimation System",
     tech: ["Python", "TensorFlow/Keras", "LSTM-RNN", "Pandas", "Matplotlib"],
     description:
       "Processed and engineered time-series weather data from NREL and WWO using normalization, anomaly detection, and feature extraction. Built optimized LSTM-RNN models with Keras (lag features, dropout, tuning), evaluated using RMSE/R², and visualized results with Matplotlib.",
-    icon: "☀️",
+    icon: <FiSun />,
   },
 ];
 
@@ -313,7 +332,9 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.9, duration: 0.6 }}
               >
-                <div className="floating-icon purple">☁️</div>
+                <div className="floating-icon purple">
+                  <FiCloud />
+                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: "0.9rem" }}>
                     AWS Expert
@@ -332,7 +353,9 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.1, duration: 0.6 }}
               >
-                <div className="floating-icon teal">🤖</div>
+                <div className="floating-icon teal">
+                  <FiCpu />
+                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: "0.9rem" }}>
                     ML & AI
@@ -437,22 +460,30 @@ export default function Home() {
 
               <motion.div className="about-highlights" variants={stagger}>
                 <motion.div className="about-highlight-card" variants={fadeUp}>
-                  <div className="icon">🏗️</div>
+                  <div className="icon">
+                    <FiLayers />
+                  </div>
                   <h4>Infrastructure at Scale</h4>
                   <p>AWS region expansion & platform modernization</p>
                 </motion.div>
                 <motion.div className="about-highlight-card" variants={fadeUp}>
-                  <div className="icon">🤖</div>
+                  <div className="icon">
+                    <FiActivity />
+                  </div>
                   <h4>ML & AI Integration</h4>
                   <p>Traffic forecasting & GenAI adoption</p>
                 </motion.div>
                 <motion.div className="about-highlight-card" variants={fadeUp}>
-                  <div className="icon">🔄</div>
+                  <div className="icon">
+                    <FiRefreshCw />
+                  </div>
                   <h4>Migration Expert</h4>
                   <p>1,500+ services migrated to JDK 17</p>
                 </motion.div>
                 <motion.div className="about-highlight-card" variants={fadeUp}>
-                  <div className="icon">🎓</div>
+                  <div className="icon">
+                    <FiAward />
+                  </div>
                   <h4>Lifelong Learner</h4>
                   <p>MS at SJSU with 4.0 GPA</p>
                 </motion.div>
@@ -554,10 +585,8 @@ export default function Home() {
                 custom={i}
               >
                 <div className="skill-category-header">
-                  <div className={`skill-category-icon ${cat.icon}`}>
-                    {cat.icon === "purple" && "⚡"}
-                    {cat.icon === "teal" && "🛠️"}
-                    {cat.icon === "amber" && "📊"}
+                  <div className={`skill-category-icon ${cat.color}`}>
+                    {cat.icon}
                   </div>
                   <h3>{cat.title}</h3>
                 </div>
