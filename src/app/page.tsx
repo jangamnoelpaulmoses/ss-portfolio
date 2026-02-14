@@ -34,7 +34,7 @@ const fadeUp = {
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
@@ -752,7 +752,7 @@ export default function Home() {
       <footer className="footer">
         <div className="container">
           <p>
-            © {new Date().getFullYear()} Shefali Saini. 
+            © {new Date().getFullYear()} Shefali Saini.
           </p>
         </div>
       </footer>
