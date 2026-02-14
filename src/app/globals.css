@@ -44,7 +44,9 @@
   --radius-xl: 28px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -63,15 +65,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  cursor: none;
+  /* Hide default cursor for custom implementation */
+}
+
+a,
+button,
+[role="button"] {
+  cursor: none;
+  /* Ensure interactive elements also hide cursor */
 }
 
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--accent-primary);
   border-radius: 3px;
@@ -195,9 +208,11 @@ body {
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -326,8 +341,17 @@ body {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
 }
 
 .hero-name {
@@ -749,9 +773,20 @@ body {
   font-size: 1.3rem;
 }
 
-.skill-category-icon.purple { background: rgba(124, 58, 237, 0.15); color: var(--accent-secondary); }
-.skill-category-icon.teal { background: var(--teal-glow); color: var(--teal); }
-.skill-category-icon.amber { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
+.skill-category-icon.purple {
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--accent-secondary);
+}
+
+.skill-category-icon.teal {
+  background: var(--teal-glow);
+  color: var(--teal);
+}
+
+.skill-category-icon.amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--amber);
+}
 
 .skill-category h3 {
   font-family: var(--font-display);
@@ -1134,7 +1169,8 @@ body {
     width: 100%;
   }
 
-  .btn-primary, .btn-secondary {
+  .btn-primary,
+  .btn-secondary {
     justify-content: center;
   }
 
