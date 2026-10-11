@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Shefali Saini | Software Engineer",
   description:
-    "Software Engineer with 4+ years at Amazon. MS in Computer Software Engineering at San Jose State University. Expertise in Java, Python, AWS, distributed systems, and ML.",
+    "Software Engineer with 4+ years at Amazon, now Software Engineer Intern at T-Mobile. MS in Computer Software Engineering at San Jose State University. Expertise in Java, Python, AWS, distributed systems, and ML.",
   keywords: [
     "Shefali Saini",
     "Software Engineer",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shefali Saini | Software Engineer",
     description:
-      "Software Engineer with 4+ years at Amazon. MS in Computer Software Engineering at SJSU.",
+      "Software Engineer with 4+ years at Amazon, now Software Engineer Intern at T-Mobile. MS in Computer Software Engineering at SJSU.",
     type: "website",
   },
 };
